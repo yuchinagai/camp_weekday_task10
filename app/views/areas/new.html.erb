@@ -1,0 +1,6 @@
+<h1>エリア検索</h1>
+<p>郵便番号で検索</p>
+<%= form_with url: '/areas/search', model: @area, local: true do |form| %>
+  <p><%= form.text_area :zipcode %></p>
+  <%= form.submit "登録" %>
+<% end %>
