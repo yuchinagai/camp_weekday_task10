@@ -1,0 +1,8 @@
+<div class="col-md-6 offset-md-3 mt-4">  
+  <h1>エリア検索</h1>
+  <p><%= form_with url: '/areas/search', model: @area, local: true do |form| %>
+    <%= form.label :zipcode, "郵便番号で検索" %>
+    <%= form.text_field :zipcode , class: "col-12"%></p>
+    <%= form.submit "検索", style:"color:white;", class: "btn btn-primary col-12"  %>
+  <% end %>
+</div>

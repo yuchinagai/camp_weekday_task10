@@ -1,0 +1,27 @@
+<div class="col-md-12 mt-5">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ZipCode</th>
+        <th>PrefCode</th>
+        <th>Address</th>
+        <th>Kana</th>
+        <th>Introduction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @area.each do |area| %>
+        <tr>
+          <th><%= area.id %></th>
+          <td><%= area.zipcode %></td>
+          <td><%= area.prefcode %></td>
+          <td><%= area.address1 %><%= area.address2 %><%= area.address3 %></td>
+          <td><%= area.kana1 %><%= area.kana2 %><%= area.kana3 %></td>
+          <td><%= area.introduction %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "検索する", areas_search_path, style:"color:white;", class: "btn btn-primary col-12"  %>
+</div>
