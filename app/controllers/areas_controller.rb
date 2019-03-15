@@ -10,12 +10,12 @@ class AreasController < ApplicationController
 
   def new
     @area = Area.new
+    post_api
   end
 
   def create
     @area = Area.new(area_params)
     post_api
-    @area.save
     render action: :edit
   end
 
