@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_232925) do
     t.string "kana1"
     t.string "kana2"
     t.string "kana3"
-    t.string "status"
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

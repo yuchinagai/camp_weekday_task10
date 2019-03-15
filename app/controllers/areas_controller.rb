@@ -4,10 +4,6 @@ class AreasController < ApplicationController
     @area = Area.all
   end
 
-  def show
-    @area = Area.find(params[:id])
-  end
-
   def new
     @area = Area.new
   end
@@ -32,9 +28,5 @@ class AreasController < ApplicationController
 
   def area_params
     params.require(:area).permit(:zipcode, :prefcode, :address1, :address2, :address3, :kana1, :kana2, :kana3, :introduction)
-  end
-
-  def set_post
-    @area = Area.find(params[:id])
   end
 end

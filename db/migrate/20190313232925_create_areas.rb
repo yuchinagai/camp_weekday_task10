@@ -9,7 +9,6 @@ class CreateAreas < ActiveRecord::Migration[5.2]
       t.string :kana1
       t.string :kana2
       t.string :kana3
-      t.string :status
       t.text :introduction
 
       t.timestamps

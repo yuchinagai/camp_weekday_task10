@@ -6,7 +6,6 @@ module Address
     require "json"
     main_url = "http://zipcloud.ibsnet.co.jp/api/search?zipcode="
     entry_url = @area.zipcode
-    puts @area.zipcode
     new_url = main_url + entry_url
     begin
       res = Net::HTTP.get(URI.parse(new_url))
@@ -23,8 +22,7 @@ module Address
         @area.address3 = hash["results"][0]["address3"]
         @area.kana1 = hash["results"][0]["kana1"]
         @area.kana2 = hash["results"][0]["kana2"]
-        @area.kana3 = hash["results"][0]["kana3"]
-        @area.status = hash["status"]        
+        @area.kana3 = hash["results"][0]["kana3"]     
         render action: :edit
       end
     rescue => e
