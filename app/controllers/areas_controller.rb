@@ -1,28 +1,31 @@
 class AreasController < ApplicationController
   include Address
-  before_action :set_post, only: [:show, :update]
   def index
     @area = Area.all
   end
 
   def show
+    @area = Area.find(params[:id])
   end
 
   def new
     @area = Area.new
-    post_api
   end
 
   def create
     @area = Area.new(area_params)
     post_api
-    render action: :edit
   end
 
   def update
-    @area.update(area_params)
-    @area.save
-    redirect_to "http://localhost:3000/"
+    @area = Area.new(area_params)
+    if @area.save
+      flash[:notice] = '地域を登録しました。'
+      redirect_to root_path
+    else
+      flash.now[:alert] = "Validation failed: #{@area.errors.full_messages.join}"
+      render action: :edit
+    end
   end
 
   private
